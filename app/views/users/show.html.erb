@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
+<p class="alert alert-success"><%= notice %></p>
 <%= render @user %>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <%= link_to "Editar este usuário", edit_user_path(@user), class: "btn btn-primary" %> |
+  <%= link_to "Voltar para usuários", users_path, class: "btn btn-secondary" %>
+<%= button_to "Excluir este usuário", @user, method: :delete, data: { confirm: "Você tem certeza?" }, class: "btn btn-danger" %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

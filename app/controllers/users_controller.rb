@@ -43,8 +43,10 @@ class UsersController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+      end      
     end
+  rescue ActiveRecord::StaleObjectError
+    redirect_to users_path, notice: 'Unpermitted updating'
   end
 
   # DELETE /users/1 or /users/1.json
