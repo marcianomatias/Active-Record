@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_205624) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_27_214945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_205624) do
     t.datetime "updated_at", null: false
     t.string "gender"
     t.integer "balance_cents"
+    t.integer "lock_version", default: 0
   end
 
   add_foreign_key "transfers", "companies"

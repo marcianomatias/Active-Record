@@ -1,5 +1,5 @@
 class TransferService
-    def perform(user, company, amount_cents)
+    def self.perform(user, company, amount_cents)
         ActiveRecord::Base.transaction do
             raise ActiveRecord::RecordInvalid unless amount_cents.is_a? Integer
 
