@@ -16,5 +16,7 @@ company1 = FactoryBot.create(:company)
 company2 = FactoryBot.create(:company)
 
 # create_list generates how many records as you specify in the second param
-FactoryBot.create_list(:transfer, 3, user: user1, company: company2) # 
+FactoryBot.create_list(:transfer, 3, user: user1, company: company2)  
 FactoryBot.create_list(:transfer, 5, user: user2, company: company1)
+FactoryBot.create_list(:transfer, 6, user: user1, company: company1)  
+FactoryBot.create_list(:transfer, 7, user: user2, company: company2)
